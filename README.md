@@ -85,12 +85,6 @@ We use the following third-party services:
 
 We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date.
 
-## Contact Us
-
-If you have questions about this Privacy Policy, please contact us at:
-
-📧 **Email**: [YOUR_EMAIL_ADDRESS]
-
 ---
 
 © 2025 KiddoLog. All rights reserved.
