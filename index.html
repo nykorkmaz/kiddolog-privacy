@@ -1,76 +1,516 @@
+<!doctype html>
+<html lang="en">
 <head>
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="KiddoLog Privacy Policy" />
+  <title>KiddoLog — Privacy Policy</title>
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --border: rgba(255,255,255,.12);
+      --accent: #7c3aed;
+      --accent2: #22c55e;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f7fb;
+        --card: rgba(10,16,30,.04);
+        --text: rgba(10,16,30,.92);
+        --muted: rgba(10,16,30,.64);
+        --border: rgba(10,16,30,.10);
+        --shadow: 0 18px 45px rgba(10,16,30,.10);
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(124,58,237,.28), transparent 55%),
+                  radial-gradient(900px 650px at 85% 15%, rgba(34,197,94,.22), transparent 55%),
+                  radial-gradient(900px 700px at 50% 90%, rgba(59,130,246,.18), transparent 55%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    header{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 18px 10px;
+    }
+
+    .brand{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      min-width: 200px;
+    }
+
+    .logo{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(124,58,237,1), rgba(34,197,94,1));
+      box-shadow: 0 12px 28px rgba(124,58,237,.25);
+      display: grid;
+      place-items: center;
+    }
+    .logo svg{ filter: drop-shadow(0 6px 10px rgba(0,0,0,.25)); }
+
+    .brand h1{
+      font-size: 16px;
+      margin: 0;
+      letter-spacing: .2px;
+    }
+
+    .brand p{
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .top-actions{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform .12s ease, background .12s ease;
+      user-select: none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.09); transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    .hero{
+      margin-top: 10px;
+      padding: 22px 18px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-inner{
+      padding: 22px 22px 18px;
+    }
+
+    .title{
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .title h2{
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 0;
+      letter-spacing: -0.3px;
+    }
+
+    .meta{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+    }
+    .dot{
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(124,58,237,.18);
+    }
+    .dot.green{
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.18);
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    @media (min-width: 980px){
+      .grid{ grid-template-columns: 300px 1fr; }
+      .sidebar{ position: sticky; top: 18px; height: fit-content; }
+    }
+
+    .sidebar{
+      padding: 16px;
+    }
+    .sidebar h3{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    .toc{
+      display: grid;
+      gap: 6px;
+    }
+    .toc a{
+      padding: 10px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .toc a:hover{
+      border-color: var(--border);
+      background: rgba(255,255,255,.05);
+      text-decoration: none;
+    }
+
+    main{
+      padding: 16px 16px 18px;
+    }
+
+    section{
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      margin-bottom: 14px;
+    }
+
+    section h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+
+    section p{
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    ul{
+      margin: 8px 0 0 18px;
+      padding: 0;
+      color: var(--text);
+    }
+    li{ margin: 6px 0; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    .note{
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      background: rgba(124,58,237,.10);
+      border-radius: 12px;
+      margin-top: 10px;
+      color: var(--text);
+    }
+
+    .footer{
+      margin-top: 14px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      padding: 3px 7px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+    }
+
+    /* Print */
+    @media print{
+      body{ background: white; color: #111; }
+      .btn, .sidebar{ display: none !important; }
+      .card, section{ box-shadow: none; background: transparent; }
+      :root{ --border: rgba(0,0,0,.15); }
+      a{ text-decoration: underline; }
+    }
+  </style>
 </head>
+
 <body>
-KiddoLog Privacy Policy
-Last Updated: January 6, 2025
+  <div class="wrap">
 
-Introduction
-KiddoLog ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
+    <header>
+      <div class="brand" aria-label="KiddoLog">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 12.5c0-3 2.2-5.5 5-5.5s5 2.5 5 5.5c0 3.7-2.6 6.5-5 6.5s-5-2.8-5-6.5Z" stroke="white" stroke-width="1.8" opacity="0.95"/>
+            <path d="M9 10c0-1 .9-2 2-2" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.95"/>
+          </svg>
+        </div>
+        <div>
+          <h1>KiddoLog</h1>
+          <p>Privacy Policy</p>
+        </div>
+      </div>
 
-Information We Collect
-Personal Information
-Account Information: Email address and password for authentication
-Baby Profile Data: Baby's name, birth date, gender, blood type, and photo (optional)
-Health & Activity Data
-Feeding records (breast, bottle, solid food)
-Sleep patterns and duration
-Diaper change logs
-Growth measurements (weight, height, head circumference)
-Health records (symptoms, medications, vaccinations, doctor visits)
-Allergy information
-Device Information
-Device type and operating system
-Push notification tokens (if enabled)
-How We Use Your Information
-To provide and maintain the app's functionality
-To sync your data across devices
-To send push notifications (reminders, alerts)
-To improve our services
-Data Storage & Security
-All data is stored securely on Supabase servers
-Data is encrypted in transit using SSL/TLS
-We implement industry-standard security measures
-Your data is associated with your account and not shared with third parties
-Data Sharing
-We do NOT:
+      <div class="top-actions">
+        <button class="btn" onclick="window.print()" title="Print this page">
+          Print
+        </button>
+        <button class="btn" id="copyLinkBtn" title="Copy link to this policy">
+          Copy Link
+        </button>
+      </div>
+    </header>
 
-Sell your personal information
-Share your data with advertisers
-Use your data for marketing purposes
-We may share data only:
+    <div class="hero card">
+      <div class="hero-inner">
+        <div class="title">
+          <div>
+            <h2>KiddoLog Privacy Policy</h2>
+            <div class="meta">
+              <span class="pill"><span class="dot"></span> Last Updated: <strong>January 6, 2025</strong></span>
+              <span class="pill"><span class="dot green"></span> Applies to the KiddoLog mobile application</span>
+            </div>
+          </div>
+        </div>
+        <p class="muted" style="margin: 14px 0 0;">
+          KiddoLog ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect,
+          use, and safeguard your information when you use our mobile application.
+        </p>
+      </div>
+    </div>
 
-With your explicit consent
-To comply with legal obligations
-To protect our rights and safety
-Family Sharing Feature
-KiddoLog allows you to share baby profiles with family members using a share code. Shared members can view and add records. You control who has access.
+    <div class="grid">
+      <aside class="sidebar card" aria-label="Table of contents">
+        <h3>Contents</h3>
+        <nav class="toc">
+          <a href="#information-we-collect">Information We Collect</a>
+          <a href="#how-we-use">How We Use Your Information</a>
+          <a href="#storage-security">Data Storage &amp; Security</a>
+          <a href="#data-sharing">Data Sharing</a>
+          <a href="#family-sharing">Family Sharing Feature</a>
+          <a href="#your-rights">Your Rights</a>
+          <a href="#account-deletion">Account Deletion</a>
+          <a href="#childrens-privacy">Children's Privacy</a>
+          <a href="#third-party-services">Third-Party Services</a>
+          <a href="#changes">Changes to This Policy</a>
+        </nav>
 
-Your Rights
-You have the right to:
+        <div class="note">
+          Tip: Jump quickly with <span class="kbd">⌘</span> + <span class="kbd">F</span> (Mac) or <span class="kbd">Ctrl</span> + <span class="kbd">F</span> (Windows).
+        </div>
+      </aside>
 
-Access your data through the app
-Update your information at any time
-Delete your account and all associated data
-Export your data (feature available in app)
-Account Deletion
-You can delete your account at any time through:
+      <main class="card" aria-label="Privacy policy content">
+        <div style="padding: 18px;">
+          <section id="information-we-collect">
+            <h3>Information We Collect</h3>
 
-Go to Profile → Delete Account
-Confirm deletion
-This will permanently remove all your data from our servers.
+            <p><strong>Personal Information</strong></p>
+            <ul>
+              <li><strong>Account Information:</strong> Email address and password for authentication</li>
+              <li>
+                <strong>Baby Profile Data:</strong> Baby's name, birth date, gender, blood type, and photo (optional)
+              </li>
+            </ul>
 
-Children's Privacy
-KiddoLog is designed to help parents track their children's development. We do not knowingly collect information directly from children under 13.
+            <p style="margin-top: 12px;"><strong>Health &amp; Activity Data</strong></p>
+            <ul>
+              <li>Feeding records (breast, bottle, solid food)</li>
+              <li>Sleep patterns and duration</li>
+              <li>Diaper change logs</li>
+              <li>Growth measurements (weight, height, head circumference)</li>
+              <li>Health records (symptoms, medications, vaccinations, doctor visits)</li>
+              <li>Allergy information</li>
+            </ul>
 
-Third-Party Services
-We use the following third-party services:
+            <p style="margin-top: 12px;"><strong>Device Information</strong></p>
+            <ul>
+              <li>Device type and operating system</li>
+              <li>Push notification tokens (if enabled)</li>
+            </ul>
+          </section>
 
-Supabase: Database and authentication
-Apple Push Notification Service: For notifications
-RevenueCat/StoreKit: For subscription management
-Changes to This Policy
-We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date.
+          <section id="how-we-use">
+            <h3>How We Use Your Information</h3>
+            <ul>
+              <li>To provide and maintain the app's functionality</li>
+              <li>To sync your data across devices</li>
+              <li>To send push notifications (reminders, alerts)</li>
+              <li>To improve our services</li>
+            </ul>
+          </section>
 
-© 2025 KiddoLog. All rights reserved.
+          <section id="storage-security">
+            <h3>Data Storage &amp; Security</h3>
+            <ul>
+              <li>All data is stored securely on Supabase servers</li>
+              <li>Data is encrypted in transit using SSL/TLS</li>
+              <li>We implement industry-standard security measures</li>
+              <li>Your data is associated with your account and not shared with third parties</li>
+            </ul>
+          </section>
+
+          <section id="data-sharing">
+            <h3>Data Sharing</h3>
+            <p><strong>We do NOT:</strong></p>
+            <ul>
+              <li>Sell your personal information</li>
+              <li>Share your data with advertisers</li>
+              <li>Use your data for marketing purposes</li>
+            </ul>
+
+            <p style="margin-top: 12px;"><strong>We may share data only:</strong></p>
+            <ul>
+              <li>With your explicit consent</li>
+              <li>To comply with legal obligations</li>
+              <li>To protect our rights and safety</li>
+            </ul>
+          </section>
+
+          <section id="family-sharing">
+            <h3>Family Sharing Feature</h3>
+            <p>
+              KiddoLog allows you to share baby profiles with family members using a share code. Shared members can view and add records.
+              You control who has access.
+            </p>
+          </section>
+
+          <section id="your-rights">
+            <h3>Your Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access your data through the app</li>
+              <li>Update your information at any time</li>
+              <li>Delete your account and all associated data</li>
+              <li>Export your data (feature available in app)</li>
+            </ul>
+          </section>
+
+          <section id="account-deletion">
+            <h3>Account Deletion</h3>
+            <p>You can delete your account at any time through:</p>
+            <ul>
+              <li>Go to <strong>Profile → Delete Account</strong></li>
+              <li>Confirm deletion</li>
+            </ul>
+            <p class="muted" style="margin-top: 10px;">
+              This will permanently remove all your data from our servers.
+            </p>
+          </section>
+
+          <section id="childrens-privacy">
+            <h3>Children's Privacy</h3>
+            <p>
+              KiddoLog is designed to help parents track their children's development. We do not knowingly collect information directly
+              from children under 13.
+            </p>
+          </section>
+
+          <section id="third-party-services">
+            <h3>Third-Party Services</h3>
+            <p>We use the following third-party services:</p>
+            <ul>
+              <li><strong>Supabase:</strong> Database and authentication</li>
+              <li><strong>Apple Push Notification Service:</strong> For notifications</li>
+              <li><strong>RevenueCat/StoreKit:</strong> For subscription management</li>
+            </ul>
+          </section>
+
+          <section id="changes">
+            <h3>Changes to This Policy</h3>
+            <p>
+              We may update this Privacy Policy from time to time. We will notify you of any changes by updating the
+              <strong>"Last Updated"</strong> date.
+            </p>
+          </section>
+
+          <div class="footer">
+            <div>© 2025 KiddoLog. All rights reserved.</div>
+            <div class="muted">For questions, contact us via the app support channel.</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', id);
+      });
+    });
+
+    // Copy link button
+    const btn = document.getElementById('copyLinkBtn');
+    btn?.addEventListener('click', async () => {
+      try {
+        const url = window.location.href.split('#')[0];
+        await navigator.clipboard.writeText(url);
+        const prev = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = prev, 1200);
+      } catch {
+        alert('Copy failed. You can manually copy the page URL from the address bar.');
+      }
+    });
+  </script>
 </body>
+</html>
